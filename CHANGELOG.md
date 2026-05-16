@@ -2,6 +2,11 @@
 
 All notable changes to LiPicons.
 
+## [1.0.1] — 2026-05-17
+
+### Fixed
+- **Sprite XML parse error** in `lipicons.fill.svg` and `lipicons.duotone.svg`. ~519 icons (`more-horizontal`, `info`, `warning`, dotted indicators) had baked-in `fill="currentColor"` on inner circles. The fill/duotone renderer was naively prepending another `fill` attribute, producing duplicate XML attributes that strict parsers rejected. Build now strips existing fill/stroke before applying variant attrs.
+
 ## [1.0.0] — 2026-05-17
 
 ### First public release
