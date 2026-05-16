@@ -1,0 +1,32 @@
+{
+  "name": "lipicons",
+  "version": "1.0.0",
+  "description": "Hand-drawn icon system for Hospital Information Systems",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:sprite": "node scripts/sprite.mjs",
+    "build:all": "npm run build && npm run build:sprite"
+  },
+  "author": "imagiQa Healthcare Services Pvt Ltd",
+  "license": "SEE LICENSE IN ./LICENSE",
+  "homepage": "https://github.com/arunshivab/lipicons",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arunshivab/lipicons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arunshivab/lipicons/issues"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "healthcare",
+    "his",
+    "emr",
+    "hospital",
+    "medical",
+    "lipi"
+  ]
+}

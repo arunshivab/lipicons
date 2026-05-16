@@ -1,0 +1,26 @@
+name: release
+on:
+  push:
+    tags: ['v*']
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm run build:all
+      - name: Verify dist
+        run: ls -la dist/
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/lipicons.svg
+            dist/lipicons.bold.svg
+            dist/lipicons.light.svg
+            dist/lipicons.thin.svg
+            dist/lipicons.fill.svg
+            dist/lipicons.duotone.svg
+            dist/json/icons.json
