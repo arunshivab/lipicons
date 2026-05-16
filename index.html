@@ -1,105 +1,505 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>LiPicons · v1.0.0 · gallery</title>
+<title>LiPicons · v1.0.1 · 1,149 hand-drawn icons for HIS</title>
+<meta name="description" content="A free, hand-crafted icon family for Hospital Information Systems by imagiQa. 1,149 icons across 115 categories in 6 variants."/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
-  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: linear-gradient(135deg, #FBF7EF 0%, #EBE3D0 100%);
-    color: #0F2D5E;
-    min-height: 100vh;
-    padding: 32px;
-  }
-  .wrap { max-width: 1240px; margin: 0 auto; }
-  header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 18px; border-bottom: 1px solid #E5DFD3; margin-bottom: 20px; }
-  h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.8px; }
-  h1 em { font-style: italic; color: #B59C6A; font-weight: 500; }
-  .sub { color: #6B7A92; font-size: 13px; margin-top: 4px; }
-  .meta { font-family: ui-monospace, monospace; font-size: 11px; color: #8A7C5F; text-align: right; line-height: 1.7; }
-  .meta b { color: #0F2D5E; font-weight: 600; }
-  .toolbar { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; align-items: center; }
-  .search { flex: 1; min-width: 280px; padding: 10px 14px; font: inherit; font-size: 14px; background: rgba(255,255,255,0.7); border: 1px solid #E5DFD3; border-radius: 10px; outline: none; color: #0F2D5E; }
-  .pill-group { display: flex; gap: 2px; background: rgba(255,255,255,0.6); border: 1px solid #E5DFD3; border-radius: 10px; padding: 3px; }
-  .pill { padding: 6px 12px; font-size: 10px; font-family: ui-monospace, monospace; letter-spacing: 0.08em; color: #6B7A92; background: transparent; border: none; cursor: pointer; border-radius: 7px; text-transform: uppercase; }
-  .pill.on { background: #0F2D5E; color: #fff; }
-  .count { padding: 8px 14px; background: #0F2D5E; color: #fff; border-radius: 999px; font-size: 11px; font-family: ui-monospace, monospace; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
-  .tile { background: rgba(255,255,255,0.65); border: 1px solid #E5DFD3; border-radius: 12px; padding: 16px 8px 10px; display: flex; flex-direction: column; align-items: center; transition: all .15s; }
-  .tile:hover { background: #fff; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(15,45,94,.08); }
-  .tile svg { color: #0F2D5E; margin-bottom: 8px; }
-  .tile .name { font-size: 10px; font-family: ui-monospace, monospace; color: #6B7A92; text-align: center; word-break: break-all; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0F2D5E; --navy-deep:#0A2246; --cobalt:#1B4DA0; --sky:#4A9BD4;
+  --cream-1:#FBF7EF; --cream-2:#F5F1EA; --cream-border:#E5DFD3;
+  --ink:#0F2D5E; --muted:#6B7A92; --gold:#8A7C5F; --gold-2:#B59C6A;
+  --ok:#0E8A5F;
+}
+html,body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:linear-gradient(135deg,var(--cream-1) 0%,var(--cream-2) 60%,#EBE3D0 100%);min-height:100vh;}
+.wrap{max-width:1320px;margin:0 auto;padding:32px 28px 80px;}
+.mono{font-family:'DM Mono',ui-monospace,monospace;}
+a{color:var(--cobalt);text-decoration:none;}
+a:hover{border-bottom:1px dashed currentColor;}
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;margin-bottom:18px;}
+.hero-mark{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0.16em;color:var(--navy);text-transform:uppercase;font-weight:600;padding:6px 12px;background:#fff;border:1px solid var(--cream-border);border-radius:999px;margin-bottom:14px;}
+.hero-mark .v{color:var(--ok);font-family:'DM Mono';letter-spacing:0;}
+h1{font-size:42px;font-weight:700;letter-spacing:-1.3px;line-height:1.04;}
+h1 em{font-style:italic;color:var(--gold-2);font-weight:500;}
+.sub{font-size:14px;color:var(--muted);margin-top:10px;max-width:620px;line-height:1.6;}
+.sub b{color:var(--navy);font-weight:600;}
+.copy-strip{text-align:right;font-size:10px;font-family:'DM Mono';color:var(--gold);letter-spacing:0.06em;line-height:1.7;}
+.copy-strip b{color:var(--navy);font-weight:600;}
+.copy-strip a{color:var(--cobalt);}
+
+/* ── STATS BAR ────────────────────────────────────── */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:24px 0 18px;}
+.stat{background:rgba(255,255,255,0.6);border:1px solid var(--cream-border);border-radius:12px;padding:14px 16px;}
+.stat .k{font-size:9px;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;font-family:'DM Mono';}
+.stat .v{font-size:22px;font-weight:700;color:var(--navy);line-height:1;letter-spacing:-0.4px;}
+.stat .v small{font-size:11px;color:var(--muted);font-weight:500;margin-left:4px;letter-spacing:0;}
+.stat .d{font-size:11px;color:var(--muted);margin-top:4px;}
+
+/* ── TOOLBAR ──────────────────────────────────────── */
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px;align-items:center;}
+.search{position:relative;flex:1 1 320px;min-width:240px;}
+.search input{width:100%;padding:12px 14px 12px 40px;background:rgba(255,255,255,0.75);border:1px solid var(--cream-border);border-radius:12px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;}
+.search input:focus{border-color:var(--navy);}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted);}
+.variant-group{display:flex;flex-wrap:wrap;background:rgba(255,255,255,0.6);border:1px solid var(--cream-border);border-radius:10px;padding:3px;}
+.variant-btn{padding:7px 11px;font-size:10px;font-family:'DM Mono';letter-spacing:0.06em;color:var(--muted);background:transparent;border:none;cursor:pointer;border-radius:8px;text-transform:uppercase;font-weight:500;}
+.variant-btn.on{background:var(--navy);color:#fff;}
+.variant-btn:hover:not(.on){background:rgba(255,255,255,0.5);color:var(--navy);}
+.size-pill{padding:8px 14px;background:rgba(255,255,255,0.6);border:1px solid var(--cream-border);border-radius:999px;font-size:11px;font-family:'DM Mono';color:var(--muted);}
+.count-pill{padding:8px 14px;background:var(--navy);color:#fff;border-radius:999px;font-size:11px;font-family:'DM Mono';}
+
+/* ── CATEGORY NAV ─────────────────────────────────── */
+.catnav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px;max-height:88px;overflow-y:auto;padding-bottom:6px;}
+.catnav button{padding:6px 12px;font-size:11.5px;font-family:inherit;background:rgba(255,255,255,0.5);border:1px solid var(--cream-border);border-radius:999px;color:var(--muted);cursor:pointer;white-space:nowrap;}
+.catnav button.on{background:var(--navy);color:#fff;border-color:var(--navy);}
+.catnav button:hover:not(.on){background:#fff;color:var(--navy);}
+
+/* ── GRID ─────────────────────────────────────────── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;}
+.tile{background:rgba(255,255,255,0.7);border:1px solid var(--cream-border);border-radius:12px;padding:16px 8px 10px;display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:all .15s;position:relative;}
+.tile:hover{background:#fff;border-color:var(--navy);transform:translateY(-1px);box-shadow:0 6px 18px rgba(15,45,94,0.08);}
+.tile .ico{color:var(--navy);margin-bottom:8px;display:flex;align-items:center;justify-content:center;height:32px;}
+.tile .name{font-size:10px;color:var(--muted);text-align:center;font-family:'DM Mono';letter-spacing:0.02em;word-break:break-all;line-height:1.3;}
+.tile.copied::after{content:"COPIED";position:absolute;top:5px;right:5px;font-size:8px;font-family:'DM Mono';background:var(--ok);color:#fff;padding:2px 6px;border-radius:4px;letter-spacing:0.10em;}
+
+/* ── SECTION HEAD ─────────────────────────────────── */
+.sec{margin-top:24px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.sec-num{font-family:'DM Mono';font-size:11px;color:var(--gold);}
+.sec-title{font-size:14px;font-weight:600;color:var(--navy);}
+.sec-count{font-size:10px;font-family:'DM Mono';color:var(--muted);background:rgba(255,255,255,0.6);padding:3px 8px;border-radius:999px;border:1px solid var(--cream-border);}
+.sec-line{flex:1;height:1px;background:linear-gradient(to right,var(--cream-border),transparent);}
+
+.empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:13px;}
+
+/* ── LOADING ──────────────────────────────────────── */
+.loading{padding:60px 20px;text-align:center;color:var(--muted);font-size:13px;font-family:'DM Mono';}
+.loading .spin{display:inline-block;width:14px;height:14px;border:2px solid var(--cream-border);border-top-color:var(--navy);border-radius:50%;animation:spin 0.8s linear infinite;margin-right:10px;vertical-align:-3px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ── DETAIL DRAWER ────────────────────────────────── */
+.drawer-bg{position:fixed;inset:0;background:rgba(15,45,94,0.45);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;}
+.drawer-bg.on{display:flex;}
+.drawer{background:#fff;border-radius:18px;max-width:620px;width:100%;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,0.30);max-height:90vh;overflow-y:auto;}
+.dr-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;}
+.dr-name{font-size:22px;font-weight:700;color:var(--navy);font-family:'DM Mono';letter-spacing:-0.3px;}
+.dr-cat{font-size:10px;font-family:'DM Mono';letter-spacing:0.14em;color:var(--gold);text-transform:uppercase;margin-top:4px;}
+.dr-close{background:transparent;border:1px solid var(--cream-border);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:13px;color:var(--muted);font-family:inherit;}
+.dr-close:hover{background:var(--cream-1);}
+.dr-preview{display:flex;gap:12px;margin-bottom:18px;}
+.dr-pv{flex:1;background:var(--cream-1);border:1px solid var(--cream-border);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 14px;color:var(--navy);}
+.dr-pv-lbl{font-size:9px;font-family:'DM Mono';letter-spacing:0.14em;color:var(--muted);margin-top:8px;}
+.dr-tabs{display:flex;gap:3px;background:var(--cream-1);border:1px solid var(--cream-border);border-radius:10px;padding:3px;margin-bottom:10px;flex-wrap:wrap;}
+.dr-tab{flex:1;padding:7px 9px;font-size:10px;font-family:'DM Mono';color:var(--muted);background:transparent;border:none;cursor:pointer;border-radius:7px;letter-spacing:0.04em;text-transform:uppercase;min-width:60px;}
+.dr-tab.on{background:var(--navy);color:#fff;}
+.dr-code{background:#0F2D5E;color:#E0E8F2;padding:14px;border-radius:10px;font-family:'DM Mono';font-size:11px;line-height:1.6;white-space:pre-wrap;word-break:break-all;max-height:220px;overflow:auto;}
+.dr-actions{display:flex;gap:8px;margin-top:14px;}
+.dr-btn{flex:1;padding:10px;border-radius:8px;border:none;background:var(--navy);color:#fff;font-size:12px;cursor:pointer;font-family:inherit;font-weight:500;}
+.dr-btn:hover{background:var(--navy-deep);}
+.dr-btn.alt{background:transparent;border:1px solid var(--cream-border);color:var(--muted);}
+.dr-btn.alt:hover{background:var(--cream-1);color:var(--navy);}
+.dr-meta{font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.7;}
+.dr-meta b{color:var(--navy);}
+
+/* ── FOOTER ───────────────────────────────────────── */
+.footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--cream-border);display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;font-size:12px;color:var(--muted);line-height:1.7;}
+.footer h4{font-size:11px;font-family:'DM Mono';letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;font-weight:500;}
+.footer a{color:var(--cobalt);}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .copy-strip{text-align:left;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .footer{grid-template-columns:1fr;}
+  h1{font-size:32px;}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
+
+  <!-- ═══ HERO ═════════════════════════════════════════ -->
+  <header class="hero">
     <div>
-      <h1>LiPicons · <em>gallery</em></h1>
-      <div class="sub">All <span id="n">—</span> icons rendered from the local sprite. Open the file directly or serve over HTTP.</div>
+      <div class="hero-mark">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+        Live · <span class="v">v1.0.1</span> · served from jsDelivr
+      </div>
+      <h1>The LiPi visual language.<br/><em>For hospitals.</em></h1>
+      <p class="sub">
+        A hand-drawn icon family for Hospital Information Systems &mdash; built for the LiPi HIS by <b>imagiQa</b>. <b><span id="iconCount">—</span> icons across <span id="catCount">—</span> categories</b> on a 24×24 grid, drawn in <b>6 variants</b>. Free for LiPi partners &amp; friends.
+      </p>
     </div>
-    <div class="meta">
-      © 2026 <b>imagiQa</b><br/>
-      v1.0.0 · <span id="vn">regular</span><br/>
-      Partner Licence
+    <div class="copy-strip">
+      © 2026 <b>imagiQa Healthcare Services Pvt Ltd</b><br/>
+      LiPi™ is a product of imagiQa<br/>
+      Partner Licence v1 &middot; <a href="./LICENSE" target="_blank">read</a><br/>
+      <a href="https://github.com/arunshivab/lipicons" target="_blank">github &nearr;</a>
     </div>
   </header>
 
-  <div class="toolbar">
-    <input class="search" id="q" placeholder="Search icons by name…"/>
-    <div class="pill-group" id="vp">
-      <button class="pill on" data-v="regular">Regular</button>
-      <button class="pill" data-v="bold">Bold</button>
-      <button class="pill" data-v="light">Light</button>
-      <button class="pill" data-v="thin">Thin</button>
-      <button class="pill" data-v="fill">Fill</button>
-      <button class="pill" data-v="duotone">Duotone</button>
+  <!-- ═══ STATS BAR ════════════════════════════════════ -->
+  <div class="stats">
+    <div class="stat">
+      <div class="k">Icons</div>
+      <div class="v"><span id="statIcons">—</span></div>
+      <div class="d">hand-drawn · 24×24 grid</div>
     </div>
-    <div class="count" id="c">— / —</div>
+    <div class="stat">
+      <div class="k">Categories</div>
+      <div class="v"><span id="statCats">—</span></div>
+      <div class="d">clinical · admin · ops · vitals · &hellip;</div>
+    </div>
+    <div class="stat">
+      <div class="k">Variants</div>
+      <div class="v">6</div>
+      <div class="d">Regular · Bold · Light · Thin · Fill · Duotone</div>
+    </div>
+    <div class="stat">
+      <div class="k">Total combos</div>
+      <div class="v"><span id="statCombos">—</span></div>
+      <div class="d">icons × variants</div>
+    </div>
+    <div class="stat">
+      <div class="k">CDN</div>
+      <div class="v" style="font-size:14px;letter-spacing:0;">jsDelivr</div>
+      <div class="d">free · global · <span class="mono">@v1.0.1</span></div>
+    </div>
   </div>
 
-  <div id="grid" class="grid"></div>
+  <!-- ═══ TOOLBAR ══════════════════════════════════════ -->
+  <div class="toolbar">
+    <div class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.25"/><path d="M19.75 19.75l-4.6-4.6"/></svg>
+      <input id="q" placeholder="Loading…" disabled/>
+    </div>
+    <div class="variant-group" id="variants">
+      <button class="variant-btn on" data-v="regular">Regular</button>
+      <button class="variant-btn" data-v="bold">Bold</button>
+      <button class="variant-btn" data-v="light">Light</button>
+      <button class="variant-btn" data-v="thin">Thin</button>
+      <button class="variant-btn" data-v="fill">Fill</button>
+      <button class="variant-btn" data-v="duotone">Duotone</button>
+    </div>
+    <div class="size-pill" id="sizePill">REGULAR · 32 px</div>
+    <div class="count-pill" id="countPill">— / —</div>
+  </div>
+
+  <!-- ═══ CATEGORY NAV ═════════════════════════════════ -->
+  <div class="catnav" id="catnav"></div>
+
+  <!-- ═══ GRID ═════════════════════════════════════════ -->
+  <div id="sections"><div class="loading"><span class="spin"></span>Loading 1,149 icons from the manifest…</div></div>
+
+  <!-- ═══ FOOTER ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div>
+      <h4>About</h4>
+      LiPicons is the icon system for <b>LiPi</b>, the Hospital Information System by imagiQa. Hand-drawn for a clinical context — vitals, billing, pharmacy, lab, imaging, accreditation. Every icon honours <span class="mono">currentColor</span>, so CSS controls tint.
+    </div>
+    <div>
+      <h4>Use</h4>
+      Cdn: <span class="mono">cdn.jsdelivr.net/gh/arunshivab/lipicons</span><br/>
+      Manifest: <a href="./dist/json/icons.json">icons.json</a><br/>
+      Source: <a href="https://github.com/arunshivab/lipicons" target="_blank">GitHub</a>
+    </div>
+    <div>
+      <h4>Licence</h4>
+      <b>imagiQa Partner Licence v1</b><br/>
+      Free for LiPi partners &amp; friends, personal &amp; non-commercial use. Commercial relicensing: <a href="mailto:licensing@imagiqa.health">licensing@imagiqa.health</a>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ═══ DETAIL DRAWER ══════════════════════════════════ -->
+<div class="drawer-bg" id="drawer">
+  <div class="drawer">
+    <div class="dr-head">
+      <div>
+        <div class="dr-name" id="drName">—</div>
+        <div class="dr-cat" id="drCat">—</div>
+      </div>
+      <button class="dr-close" onclick="closeDrawer()">Close</button>
+    </div>
+    <div class="dr-preview">
+      <div class="dr-pv"><span id="drPv16"></span><span class="dr-pv-lbl">16 PX</span></div>
+      <div class="dr-pv"><span id="drPv24"></span><span class="dr-pv-lbl">24 PX</span></div>
+      <div class="dr-pv"><span id="drPv48"></span><span class="dr-pv-lbl">48 PX</span></div>
+    </div>
+    <div class="dr-tabs">
+      <button class="dr-tab on" data-t="svg">Inline SVG</button>
+      <button class="dr-tab" data-t="js">HTML + JS</button>
+      <button class="dr-tab" data-t="url">Direct URL</button>
+      <button class="dr-tab" data-t="blazor">Blazor</button>
+      <button class="dr-tab" data-t="react">React</button>
+    </div>
+    <div class="dr-code" id="drCode"></div>
+    <div class="dr-actions">
+      <button class="dr-btn" onclick="copyCode()">Copy code</button>
+      <button class="dr-btn alt" onclick="downloadSVG()">Download SVG</button>
+    </div>
+    <div class="dr-meta" id="drMeta"></div>
+  </div>
 </div>
 
 <script>
-let variant = 'regular';
-let manifest = null;
-let q = '';
+const CDN_BASE = 'https://cdn.jsdelivr.net/gh/arunshivab/lipicons@v1.0.1/dist';
+let ICONS = null;
+let MANIFEST = null;
 
-async function load() {
-  const res = await fetch('./dist/json/icons.json');
-  manifest = await res.json();
-  document.getElementById('n').textContent = manifest.count;
-  render();
-}
+/* Variant rendering parameters. Mirrors scripts/build.mjs exactly. */
+const VARIANTS = {
+  regular: { stroke: 1.75 },
+  bold:    { stroke: 2.25 },
+  light:   { stroke: 1.25 },
+  thin:    { stroke: 1.00 },
+  fill:    { stroke: 0,    mode: 'fill' },
+  duotone: { stroke: 1.5,  mode: 'duotone' },
+};
 
-function spriteFor(v) { return v === 'regular' ? './dist/lipicons.svg' : './dist/lipicons.' + v + '.svg'; }
-
-function render() {
-  document.getElementById('vn').textContent = variant;
-  const names = Object.keys(manifest.icons).filter(n =>
-    !q || n.includes(q.toLowerCase()) || (manifest.icons[n].keywords||[]).some(k => k.includes(q.toLowerCase()))
+function applyAttrs(svgFrag, newAttrs) {
+  return svgFrag.replace(
+    /<(path|circle|rect|ellipse|polygon|polyline|line)\b([^/>]*)(\/?>)/g,
+    (m, tag, attrs, end) => {
+      const cleaned = attrs
+        .replace(/\s*fill\s*=\s*"[^"]*"/g, '')
+        .replace(/\s*stroke\s*=\s*"[^"]*"/g, '')
+        .replace(/\s*fill-opacity\s*=\s*"[^"]*"/g, '');
+      return `<${tag} ${newAttrs}${cleaned}${end}`;
+    }
   );
-  document.getElementById('c').textContent = names.length + ' / ' + manifest.count;
-  const sprite = spriteFor(variant);
-  document.getElementById('grid').innerHTML = names.map(n =>
-    `<div class="tile">
-      <svg width="32" height="32"><use href="${sprite}#${n}"/></svg>
-      <div class="name">${n}</div>
-    </div>`
-  ).join('');
 }
 
-document.getElementById('q').addEventListener('input', e => { q = e.target.value; render(); });
-document.getElementById('vp').addEventListener('click', e => {
-  const v = e.target.dataset.v; if (!v) return;
-  variant = v;
-  document.querySelectorAll('#vp .pill').forEach(p => p.classList.toggle('on', p.dataset.v === v));
-  render();
+function renderIconSvg(def, variant, size=24){
+  const v = VARIANTS[variant];
+  const paths = def.paths.join('');
+  const base = `width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"`;
+
+  if(v.mode === 'fill'){
+    return `<svg ${base}>${applyAttrs(paths, 'fill="currentColor" stroke="none" ')}</svg>`;
+  }
+  if(v.mode === 'duotone'){
+    const idx = def.paths.findIndex(p => /<(rect|circle|ellipse)/.test(p) || /[Zz]/.test(p));
+    const i = idx === -1 ? 0 : idx;
+    const bg = applyAttrs(def.paths[i], 'fill="currentColor" stroke="none" fill-opacity="0.22" ');
+    return `<svg ${base} stroke-width="${v.stroke}">${bg}${paths}</svg>`;
+  }
+  return `<svg ${base} stroke-width="${v.stroke}">${paths}</svg>`;
+}
+
+/* Category labels: derived from manifest cat tags. Pretty-print known ones. */
+const CAT_LABELS = {
+  ui:"General · UI", finance:"Finance · Billing", clinical:"Clinical", department:"Departments",
+  oncology:"Oncology", records:"Records · Documents", comms:"Communication", lab:"Laboratory",
+  pharmacy:"Pharmacy", bed:"Bed · Ward", hr:"Human Resources", inventory:"Inventory · Store",
+  bi:"Business Intelligence", quality:"Quality · Compliance", workflow:"Workflow · Status",
+  journey:"Patient Journey", vitals:"Vitals · Measurement", telemed:"Telemedicine",
+  insure:"Insurance Workflow", research:"Education · Research", surgery:"Surgery · Anaesthesia",
+  imaging:"Imaging Modalities", microbio:"Microbiology", immune:"Immunisation",
+  a11y:"Accessibility", device:"Mobile · Device", nutrition:"Nutrition · Diet",
+  bloodbank:"Blood Bank", admin:"Admin · Masters", ops:"Queues · Operations",
+  specialty:"Clinical Specialties", ambulatory:"Emergency · Ambulatory",
+  govern:"Governance · Security", iot:"IoT · Medical Devices", labauto:"Lab Automation",
+  radonc:"Radiation Oncology", matnicu:"Maternity · NICU", rehab:"Rehab · Physio",
+  wellness:"Wellness · Lifestyle", reporting:"Reporting · Analytics",
+  filetype:"File · Document Types", geo:"Geography · Location", cardio:"Cardiology",
+  neuro:"Neurology", ortho:"Orthopaedics", ent:"ENT", ophth:"Ophthalmology",
+  dental:"Dental", gastro:"Gastroenterology", pulmo:"Pulmonology",
+  endo:"Endocrine · Renal", haem:"Haematology", onco:"Oncology",
+  codes:"Coding · Standards", docflow:"Workflow · Documents",
+  ctrl2:"Controls · Charts", pharmsc:"Pharmacy Supply Chain", hospops:"Hospital Ops",
+  proc:"Procurement", asset:"Asset · Biomed", comms2:"Communications",
+  sched:"Calendar · Scheduling", pubh:"Public Health", schemes:"Schemes · Insurance IN",
+  forensic:"Forensic · Medicolegal", geriatric:"Geriatrics", pain:"Pain · Anaesthesia",
+  uistate:"UI · Microstates", paeds:"Paediatrics", obgyn:"OBGYN", genetics:"Genetics",
+  allergy:"Allergy · Immunology", critcare:"Critical Care", wound:"Wound Care",
+  surg2:"Surgery Detail", smart:"Smart Hospital · RTLS", ai:"AI · ML",
+  infra:"DevOps · Infra", sec2:"Security · Compliance", mapenv:"Map · Environment",
+  logistics:"Logistics · Fleet", trials:"Clinical Trials", patient:"Patient Empowerment",
+  derm:"Dermatology", uro:"Urology", rheum:"Rheumatology", vasc:"Vascular",
+  sleep:"Sleep Medicine", slp:"Speech · Hearing", pall:"Palliative · Hospice",
+  mh:"Mental Health", ayur:"Ayurveda · Wellness", abdm:"ABDM · India Health Stack",
+  preauth:"Pre-auth · TPA", tax:"Tax · Finance India", esign:"e-Sign · Identity",
+  notif:"Notifications", onboard:"Onboarding · Gamification", anno:"Annotation",
+  vet:"Veterinary", sport:"Sports · Rehab", occu:"Occupational Health",
+  travel:"Travel Medicine", transp:"Transplant", bari:"Bariatric · Metabolic",
+  srh:"Sexual · Reproductive", mob:"Mobility · Prosthetics", print3d:"3D Print · Bioprint",
+  spatial:"AR · VR · Spatial", way:"Wayfinding", visit:"Visitor · Volunteer",
+  mkt:"Marketing · PR", rep:"Reviews · Reputation", disaster:"Disaster · MCI",
+  aero:"Aviation · Space",
+};
+
+let activeVariant = 'regular';
+let activeCat = 'all';
+let activeQuery = '';
+let currentIcon = null;
+let currentTab = 'svg';
+
+/* ─ Load manifest ─ */
+async function init() {
+  try {
+    const res = await fetch('./dist/json/icons.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    MANIFEST = await res.json();
+    ICONS = MANIFEST.icons;
+    const total = Object.keys(ICONS).length;
+    const cats = new Set();
+    Object.values(ICONS).forEach(d => cats.add(d.cat));
+    const totalCats = cats.size;
+    document.getElementById('iconCount').textContent = total.toLocaleString();
+    document.getElementById('catCount').textContent = totalCats;
+    document.getElementById('statIcons').textContent = total.toLocaleString();
+    document.getElementById('statCats').textContent = totalCats;
+    document.getElementById('statCombos').textContent = (total * 6).toLocaleString();
+    const q = document.getElementById('q');
+    q.disabled = false;
+    q.placeholder = `Search ${total.toLocaleString()} icons by name, category, or keyword…`;
+    render();
+  } catch (e) {
+    document.getElementById('sections').innerHTML = `<div class="empty">Couldn't load <span class="mono">./dist/json/icons.json</span>: ${e.message}.<br/>If you're viewing this locally, serve via <span class="mono">npx serve</span> or push to GitHub Pages.</div>`;
+  }
+}
+
+function renderCategoryNav(){
+  if (!ICONS) return;
+  const counts = { all: Object.keys(ICONS).length };
+  Object.values(ICONS).forEach(d => counts[d.cat] = (counts[d.cat]||0) + 1);
+  // Order by count desc within their natural appearance
+  const usedCats = Array.from(new Set(Object.values(ICONS).map(d => d.cat)));
+  const nav = document.getElementById('catnav');
+  nav.innerHTML = `<button data-c="all" class="${activeCat==='all'?'on':''}">All · ${counts.all.toLocaleString()}</button>` +
+    usedCats.map(k => {
+      const label = CAT_LABELS[k] || k;
+      return `<button data-c="${k}" class="${activeCat===k?'on':''}">${label} · ${counts[k]}</button>`;
+    }).join('');
+  nav.querySelectorAll('button').forEach(b => b.onclick = () => { activeCat = b.dataset.c; render(); });
+}
+
+function render(){
+  if (!ICONS) return;
+  const q = activeQuery.toLowerCase().trim();
+  const visible = Object.entries(ICONS).filter(([name,def]) => {
+    if(activeCat !== 'all' && def.cat !== activeCat) return false;
+    if(!q) return true;
+    return name.includes(q) || def.cat.includes(q) || (def.keywords||[]).some(k => k.includes(q));
+  });
+
+  const byCat = {};
+  visible.forEach(([n,d]) => { (byCat[d.cat] = byCat[d.cat]||[]).push([n,d]); });
+  const order = activeCat === 'all' ? Object.keys(byCat) : [activeCat];
+  const sec = document.getElementById('sections');
+  if(visible.length === 0){
+    sec.innerHTML = '<div class="empty">No icons match — try a different search or category.</div>';
+  } else {
+    sec.innerHTML = '';
+    let n = 0;
+    order.forEach(cat => {
+      const list = byCat[cat]; if(!list) return;
+      n++;
+      const num = String(n).padStart(2,'0');
+      const label = CAT_LABELS[cat] || cat;
+      sec.insertAdjacentHTML('beforeend',
+        `<div class="sec"><span class="sec-num">${num}</span><span class="sec-title">${label}</span><span class="sec-count">${list.length}</span><span class="sec-line"></span></div>` +
+        `<div class="grid">${list.map(([name,def]) => `<div class="tile" data-name="${name}"><div class="ico">${renderIconSvg(def,activeVariant,32)}</div><div class="name">${name}</div></div>`).join('')}</div>`
+      );
+    });
+    sec.querySelectorAll('.tile').forEach(t => {
+      t.onclick = () => openDrawer(t.dataset.name);
+    });
+  }
+  document.getElementById('countPill').textContent = `${visible.length.toLocaleString()} / ${Object.keys(ICONS).length.toLocaleString()}`;
+  document.getElementById('sizePill').textContent = `${activeVariant.toUpperCase()} · 32 PX`;
+  renderCategoryNav();
+}
+
+/* ─ Drawer ─ */
+function openDrawer(name){
+  currentIcon = name;
+  const def = ICONS[name];
+  document.getElementById('drName').textContent = name;
+  document.getElementById('drCat').textContent = `${CAT_LABELS[def.cat] || def.cat} · ${activeVariant}`;
+  document.getElementById('drPv16').innerHTML = renderIconSvg(def, activeVariant, 16);
+  document.getElementById('drPv24').innerHTML = renderIconSvg(def, activeVariant, 24);
+  document.getElementById('drPv48').innerHTML = renderIconSvg(def, activeVariant, 48);
+  document.getElementById('drMeta').innerHTML =
+    `Keywords: <b>${(def.keywords||[]).join(', ')||'—'}</b><br/>` +
+    `Category: <b>${CAT_LABELS[def.cat] || def.cat}</b> &middot; ` +
+    `Variant: <b>${activeVariant}</b><br/>` +
+    `Licence: <b>imagiQa Partner Licence v1</b>`;
+  updateCode();
+  document.getElementById('drawer').classList.add('on');
+}
+function closeDrawer(){ document.getElementById('drawer').classList.remove('on'); }
+document.getElementById('drawer').addEventListener('click', e => { if(e.target.id==='drawer') closeDrawer(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeDrawer(); });
+
+function updateCode(){
+  if(!currentIcon) return;
+  const def = ICONS[currentIcon];
+  const svg = renderIconSvg(def, activeVariant, 24);
+  const spriteFile = activeVariant === 'regular' ? 'lipicons.svg' : `lipicons.${activeVariant}.svg`;
+  const cdnSprite = `${CDN_BASE}/${spriteFile}`;
+  const cdnSvg = `${CDN_BASE}/svg/${activeVariant}/${currentIcon}.svg`;
+
+  let out;
+  if(currentTab === 'svg'){
+    out = `<!-- inline SVG · drop anywhere -->\n${svg}`;
+  } else if(currentTab === 'js'){
+    out = `<!-- fetch sprite + reference by id -->\n<script>\nfetch('${cdnSprite}')\n  .then(r => r.text())\n  .then(s => document.body.insertAdjacentHTML('afterbegin', s));\n<\/script>\n\n<svg width="24" height="24"><use href="#${currentIcon}"/></svg>`;
+  } else if(currentTab === 'url'){
+    out = `<!-- single file direct from CDN (run \`npm run build\` to generate per-icon files) -->\n<img src="${cdnSvg}" width="24" height="24"/>\n\n<!-- or as CSS background -->\nbackground: url('${cdnSvg}') no-repeat center / contain;`;
+  } else if(currentTab === 'blazor'){
+    const pascal = currentIcon.split('-').map(s => s ? s[0].toUpperCase()+s.slice(1) : '').join('');
+    const variantPascal = activeVariant.charAt(0).toUpperCase()+activeVariant.slice(1);
+    out = `@* Coming in LiPicons.Blazor NuGet (Phase 2) *@\n\n<LiPicon Name="${currentIcon}" Variant="IconVariant.${variantPascal}" Size="24" />\n\n@* or strongly-typed *@\n<LiPicon Icon="LipiIcon.${pascal}" Variant="IconVariant.${variantPascal}" />`;
+  } else if(currentTab === 'react'){
+    const pascal = currentIcon.split('-').map(s => s ? s[0].toUpperCase()+s.slice(1) : '').join('');
+    out = `// Coming in @lipicons/react (Phase 2)\n\nimport { ${pascal} } from "@lipicons/react";\n\n<${pascal} size={24} variant="${activeVariant}" />`;
+  }
+  document.getElementById('drCode').textContent = out;
+}
+
+document.querySelectorAll('.dr-tab').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.dr-tab').forEach(x => x.classList.remove('on'));
+  b.classList.add('on'); currentTab = b.dataset.t; updateCode();
 });
-load();
+
+function copyCode(){
+  navigator.clipboard.writeText(document.getElementById('drCode').textContent);
+  // tiny feedback flash
+  const btn = event.target;
+  const t = btn.textContent;
+  btn.textContent = 'Copied ✓';
+  setTimeout(() => btn.textContent = t, 1200);
+}
+
+function downloadSVG(){
+  const def = ICONS[currentIcon];
+  const svg = `<?xml version="1.0" encoding="UTF-8"?>\n<!-- LiPicons · ${currentIcon} · ${activeVariant} · v1.0.1 -->\n<!-- © 2026 imagiQa Healthcare Services Pvt Ltd · Partner Licence v1 -->\n${renderIconSvg(def, activeVariant, 24)}`;
+  const blob = new Blob([svg], {type:'image/svg+xml'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `lipi-${currentIcon}-${activeVariant}.svg`;
+  a.click();
+}
+
+/* ─ Variant + search ─ */
+document.getElementById('variants').addEventListener('click', e => {
+  if(!e.target.matches('.variant-btn')) return;
+  document.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('on'));
+  e.target.classList.add('on');
+  activeVariant = e.target.dataset.v;
+  render();
+  if(currentIcon) openDrawer(currentIcon);
+});
+document.getElementById('q').addEventListener('input', e => { activeQuery = e.target.value; render(); });
+
+init();
 </script>
 </body>
 </html>

@@ -2,6 +2,11 @@
 
 All notable changes to LiPicons.
 
+## [1.0.2] — 2026-05-17
+
+### Added
+- **Showcase site** at `index.html` — searchable, browsable catalogue of all 1,149 icons across 6 variants. Loads from `./dist/json/icons.json`. Click any icon for code snippets (Inline SVG · HTML+JS · Direct URL · Blazor preview · React preview) and one-click download. Designed to be published via GitHub Pages at `arunshivab.github.io/lipicons/`.
+
 ## [1.0.1] — 2026-05-17
 
 ### Fixed
@@ -18,12 +23,3 @@ All notable changes to LiPicons.
 - **No npm dependencies** — build script uses only Node built-ins
 - **Free for LiPi partners & friends** under the imagiQa Partner Licence v1
 - **CDN**: served via jsDelivr from GitHub tags
-
-### Deferred to later releases
-
-- Per-icon SVG files at `dist/svg/{variant}/{name}.svg` — runnable via `npm run build`
-- Colour variant (category-tinted)
-- LiPicons.Blazor NuGet package
-- lipicons-react npm package
-- Figma Community library
-- Iconify open-collection contribution

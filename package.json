@@ -1,6 +1,6 @@
 {
   "name": "lipicons",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hand-drawn icon system for Hospital Information Systems",
   "type": "module",
   "private": true,
@@ -11,7 +11,7 @@
   },
   "author": "imagiQa Healthcare Services Pvt Ltd",
   "license": "SEE LICENSE IN ./LICENSE",
-  "homepage": "https://github.com/arunshivab/lipicons",
+  "homepage": "https://arunshivab.github.io/lipicons/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arunshivab/lipicons.git"
