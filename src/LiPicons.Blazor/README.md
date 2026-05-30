@@ -18,7 +18,7 @@ so icons render behind a hospital firewall with no network fetch and no `wwwroot
 ## Install
 
 ```xml
-<PackageReference Include="LiPicons.Blazor" Version="1.0.2" />
+<PackageReference Include="LiPicons.Blazor" Version="1.0.4" />
 ```
 
 Targets `net10.0`. Depends only on `Microsoft.AspNetCore.Components.Web` — no HIS or

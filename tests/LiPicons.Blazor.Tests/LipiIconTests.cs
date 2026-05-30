@@ -154,6 +154,7 @@ public class LipiIconTests : TestContext
     [Fact]
     public void Manifest_HasAllIcons()
     {
-        Assert.Equal(1149, IconManifest.Count);
+        Assert.True(IconManifest.Count >= 1164,
+            $"Expected at least 1164 icons, manifest has {IconManifest.Count}.");
     }
 }

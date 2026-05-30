@@ -11,7 +11,7 @@
 
     <!-- NuGet package metadata -->
     <PackageId>LiPicons.Blazor</PackageId>
-    <Version>1.0.2</Version>
+    <Version>1.0.4</Version>
     <Authors>imagiQa Healthcare Services Pvt Ltd</Authors>
     <Company>imagiQa Healthcare Services Pvt Ltd</Company>
     <Product>LiPicons</Product>
