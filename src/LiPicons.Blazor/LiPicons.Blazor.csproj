@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+
+    <RootNamespace>LiPicons.Blazor</RootNamespace>
+    <AssemblyName>LiPicons.Blazor</AssemblyName>
+
+    <!-- NuGet package metadata -->
+    <PackageId>LiPicons.Blazor</PackageId>
+    <Version>1.0.2</Version>
+    <Authors>imagiQa Healthcare Services Pvt Ltd</Authors>
+    <Company>imagiQa Healthcare Services Pvt Ltd</Company>
+    <Product>LiPicons</Product>
+    <Description>Hand-drawn icon system for Hospital Information Systems — Blazor component. 1,149 icons, 6 variants, fully offline (manifest embedded in the assembly). Render with &lt;LipiIcon Name="..." Variant="..." /&gt;.</Description>
+    <PackageTags>blazor;icons;svg;healthcare;his;emr;lipicons;imagiqa</PackageTags>
+    <Copyright>© 2026 imagiQa Healthcare Services Pvt Ltd</Copyright>
+    <PackageProjectUrl>https://github.com/arunshivab/lipicons</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/arunshivab/lipicons</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- This is a clinical-screen dependency: warnings are errors so a broken
+         build never ships to a hospital. -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0" />
+  </ItemGroup>
+
+  <!-- The whole manifest ships inside the assembly: no wwwroot copy, no CDN fetch.
+       Renders behind a hospital firewall with zero network. -->
+  <ItemGroup>
+    <!-- Embed the manifest directly from dist/ (the build output) as a single source of
+         truth — no duplicate copy to keep in sync. LogicalName fixes the resource name
+         to "icons.json" regardless of the relative path. -->
+    <EmbeddedResource Include="../../dist/json/icons.json" LogicalName="icons.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- Renderer internals are visible to the test project for white-box verification. -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="LiPicons.Blazor.Tests" />
+  </ItemGroup>
+
+</Project>

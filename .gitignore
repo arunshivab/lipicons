@@ -3,3 +3,12 @@ node_modules/
 .vscode/
 *.log
 .env
+
+# .NET
+bin/
+obj/
+artifacts/
+*.user
+
+# Generated per-icon SVGs (derivable from dist/json/icons.json via `npm run build`)
+dist/svg/

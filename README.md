@@ -75,7 +75,7 @@ Requires Node ≥ 18.
 - [x] **v1.0.1** — sprite XML fix for icons with baked-in fills
 - [x] **Showcase site** — `index.html` browsable via GitHub Pages
 - [ ] **v1.1** — Colour variant (per-category hue palette)
-- [ ] **LiPicons.Blazor** NuGet — `<LiPicon Name="…" Variant="…"/>`
+- [x] **LiPicons.Blazor** NuGet — `<LipiIcon Name="…" Variant="…"/>` (net10.0, embedded manifest, offline)
 - [ ] **@lipicons/react** — tree-shakable named exports
 - [ ] **Iconify** open-collection contribution
 - [ ] **Figma Community** library

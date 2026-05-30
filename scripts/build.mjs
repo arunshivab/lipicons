@@ -4,6 +4,12 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import vm from "node:vm";
 
+// Single source of truth for the version — keeps the manifest in lockstep with
+// package.json (and the NuGet package) so it can never drift again.
+const { version: VERSION } = JSON.parse(
+  await fs.readFile(new URL("../package.json", import.meta.url), "utf8"),
+);
+
 const SOURCES = [
   "lipi-icons-data.js",
   "lipi-icons-phase4.js","lipi-icons-phase4b.js","lipi-icons-phase4c.js",
@@ -78,7 +84,7 @@ await fs.mkdir("dist/json", { recursive: true });
 await fs.writeFile(
   "dist/json/icons.json",
   JSON.stringify({
-    version: "1.0.1",
+    version: VERSION,
     count: names.length,
     variants: Object.keys(VARIANTS),
     icons: ICONS,
