@@ -160,7 +160,7 @@ const LIPI_ICONS_PHASE4E = {
       `<circle cx="14" cy="9" r="0.8" fill="currentColor" stroke="none"/>`] },
 
   /* ═══ 47 · OPHTHALMOLOGY ════════════════════════════════════ */
-  "eye": { cat: "ophth", keywords: ["eye","vision","sight","ocular"],
+  "eye-anatomy": { cat: "ophth", keywords: ["eye","vision","sight","ocular","eyeball","anatomy"],
     paths: [`<path d="M2 12c4-7 16-7 20 0-4 7-16 7-20 0z"/>`,
       `<circle cx="12" cy="12" r="3"/>`] },
   "eye-exam": { cat: "ophth", keywords: ["snellen","chart","exam","visual acuity"],

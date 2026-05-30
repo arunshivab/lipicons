@@ -1,6 +1,6 @@
 {
-  "version": "1.0.2",
-  "count": 1149,
+  "version": "1.0.4",
+  "count": 1164,
   "variants": [
     "regular",
     "bold",
@@ -32,6 +32,25 @@
       ],
       "paths": [
         "<path d=\"M3.75 5.5h16.5l-6.5 7.75v6l-3.5 1.75v-7.75z\"/>"
+      ]
+    },
+    "sliders": {
+      "cat": "ui",
+      "keywords": [
+        "adjust",
+        "controls",
+        "options",
+        "tune",
+        "equalizer",
+        "filters"
+      ],
+      "paths": [
+        "<path d=\"M4 7.5h16\"/>",
+        "<path d=\"M4 12.5h16\"/>",
+        "<path d=\"M4 17.5h16\"/>",
+        "<circle cx=\"9\" cy=\"7.5\" r=\"2.25\"/>",
+        "<circle cx=\"15\" cy=\"12.5\" r=\"2.25\"/>",
+        "<circle cx=\"8\" cy=\"17.5\" r=\"2.25\"/>"
       ]
     },
     "settings": {
@@ -259,6 +278,120 @@
         "<path d=\"M8.25 12l2.75 2.75L15.75 9.5\"/>"
       ]
     },
+    "square": {
+      "cat": "ui",
+      "keywords": [
+        "checkbox",
+        "unchecked",
+        "box",
+        "empty",
+        "select",
+        "deselected"
+      ],
+      "paths": [
+        "<rect x=\"4.25\" y=\"4.25\" width=\"15.5\" height=\"15.5\" rx=\"3\"/>"
+      ]
+    },
+    "check-square": {
+      "cat": "ui",
+      "keywords": [
+        "checkbox",
+        "checked",
+        "selected",
+        "tick",
+        "done",
+        "toggle"
+      ],
+      "paths": [
+        "<rect x=\"4.25\" y=\"4.25\" width=\"15.5\" height=\"15.5\" rx=\"3\"/>",
+        "<path d=\"M8.25 12l2.75 2.75L15.75 9.5\"/>"
+      ]
+    },
+    "minus": {
+      "cat": "ui",
+      "keywords": [
+        "remove",
+        "subtract",
+        "dash",
+        "indeterminate",
+        "collapse"
+      ],
+      "paths": [
+        "<path d=\"M4.5 12h15\"/>"
+      ]
+    },
+    "circle-x": {
+      "cat": "ui",
+      "keywords": [
+        "cancel",
+        "error",
+        "remove",
+        "close",
+        "fail",
+        "x-circle",
+        "dismiss"
+      ],
+      "paths": [
+        "<circle cx=\"12\" cy=\"12\" r=\"8.25\"/>",
+        "<path d=\"M9.25 9.25l5.5 5.5M14.75 9.25l-5.5 5.5\"/>"
+      ]
+    },
+    "plus-circle": {
+      "cat": "ui",
+      "keywords": [
+        "add",
+        "new",
+        "create",
+        "circle-plus",
+        "insert"
+      ],
+      "paths": [
+        "<circle cx=\"12\" cy=\"12\" r=\"8.25\"/>",
+        "<path d=\"M12 8.25v7.5M8.25 12h7.5\"/>"
+      ]
+    },
+    "minus-circle": {
+      "cat": "ui",
+      "keywords": [
+        "remove",
+        "subtract",
+        "delete",
+        "circle-minus",
+        "exclude"
+      ],
+      "paths": [
+        "<circle cx=\"12\" cy=\"12\" r=\"8.25\"/>",
+        "<path d=\"M8.25 12h7.5\"/>"
+      ]
+    },
+    "circle": {
+      "cat": "ui",
+      "keywords": [
+        "radio",
+        "unselected",
+        "radio button",
+        "deselected",
+        "empty",
+        "ring"
+      ],
+      "paths": [
+        "<circle cx=\"12\" cy=\"12\" r=\"8.25\"/>"
+      ]
+    },
+    "radio": {
+      "cat": "ui",
+      "keywords": [
+        "radio button",
+        "selected",
+        "circle-dot",
+        "chosen",
+        "option"
+      ],
+      "paths": [
+        "<circle cx=\"12\" cy=\"12\" r=\"8.25\"/>",
+        "<circle cx=\"12\" cy=\"12\" r=\"3\" fill=\"currentColor\" stroke=\"none\"/>"
+      ]
+    },
     "info": {
       "cat": "ui",
       "keywords": [
@@ -285,17 +418,34 @@
         "<circle cx=\"12\" cy=\"17.25\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/>"
       ]
     },
-    "eye": {
+    "eye-anatomy": {
       "cat": "ophth",
       "keywords": [
         "eye",
         "vision",
         "sight",
-        "ocular"
+        "ocular",
+        "eyeball",
+        "anatomy"
       ],
       "paths": [
         "<path d=\"M2 12c4-7 16-7 20 0-4 7-16 7-20 0z\"/>",
         "<circle cx=\"12\" cy=\"12\" r=\"3\"/>"
+      ]
+    },
+    "eye": {
+      "cat": "ui",
+      "keywords": [
+        "view",
+        "show",
+        "visible",
+        "preview",
+        "reveal",
+        "watch"
+      ],
+      "paths": [
+        "<path d=\"M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5-9.5-6.5-9.5-6.5z\"/>",
+        "<circle cx=\"12\" cy=\"12\" r=\"2.75\"/>"
       ]
     },
     "eye-off": {
@@ -322,6 +472,48 @@
       "paths": [
         "<rect x=\"4.5\" y=\"10.5\" width=\"15\" height=\"10\" rx=\"1.75\"/>",
         "<path d=\"M7.75 10.5V7.25a4.25 4.25 0 0 1 8.5 0v3.25\"/>"
+      ]
+    },
+    "unlock": {
+      "cat": "ui",
+      "keywords": [
+        "unlocked",
+        "open",
+        "unsecure",
+        "access",
+        "unlatch"
+      ],
+      "paths": [
+        "<rect x=\"4.5\" y=\"10.5\" width=\"15\" height=\"10\" rx=\"1.75\"/>",
+        "<path d=\"M7.75 10.5V7.25a4.25 4.25 0 0 1 8.5 0\"/>"
+      ]
+    },
+    "log-out": {
+      "cat": "ui",
+      "keywords": [
+        "sign out",
+        "exit",
+        "logout",
+        "leave",
+        "quit"
+      ],
+      "paths": [
+        "<path d=\"M13 4.5H6.25A1.75 1.75 0 0 0 4.5 6.25v11.5A1.75 1.75 0 0 0 6.25 19.5H13\"/>",
+        "<path d=\"M10 12h10.5M16.5 8.25l3.75 3.75-3.75 3.75\"/>"
+      ]
+    },
+    "log-in": {
+      "cat": "ui",
+      "keywords": [
+        "sign in",
+        "enter",
+        "login",
+        "access",
+        "authenticate"
+      ],
+      "paths": [
+        "<path d=\"M11 4.5h6.75A1.75 1.75 0 0 1 19.5 6.25v11.5A1.75 1.75 0 0 1 17.75 19.5H11\"/>",
+        "<path d=\"M3.5 12H14M10.25 8.25 14 12l-3.75 3.75\"/>"
       ]
     },
     "refresh": {
@@ -414,6 +606,36 @@
       ],
       "paths": [
         "<path d=\"M5.5 9l6.5 6.5 6.5-6.5\"/>"
+      ]
+    },
+    "chevrons-left": {
+      "cat": "ui",
+      "keywords": [
+        "first",
+        "previous",
+        "rewind",
+        "start",
+        "double chevron",
+        "pagination"
+      ],
+      "paths": [
+        "<path d=\"M16 5.5l-6.5 6.5 6.5 6.5\"/>",
+        "<path d=\"M10.5 5.5L4 12l6.5 6.5\"/>"
+      ]
+    },
+    "chevrons-right": {
+      "cat": "ui",
+      "keywords": [
+        "last",
+        "next",
+        "forward",
+        "end",
+        "double chevron",
+        "pagination"
+      ],
+      "paths": [
+        "<path d=\"M8 5.5l6.5 6.5L8 18.5\"/>",
+        "<path d=\"M13.5 5.5L20 12l-6.5 6.5\"/>"
       ]
     },
     "chevron-up": {
